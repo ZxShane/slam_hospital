@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>recorder.js</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .head{
+    text-decoration: none;
+    margin-left: 40px;
+    margin-top: 40px;
+
+}
+a{
+    text-decoration: none;
+}
+.footer{
+    margin-top: 40px;
+    background: #4E5465;
+    text-decoration: none;
+    color: #DCDCDC;
+    font-size: 12px;
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+input{
+    height: 38px;
+    border-radius: 8px;
+}
+.bottom{
+    margin-left: 40px;
+}
+.content{
+    margin-left: 40px;
+}
+button{
+    box-shadow: 5px 5px 5px #9F9F9F;
+    width: 120px;
+}
+    </style>
+
+</head>
+
+<body>
+    <h1 style="text-align:center">医院导诊系统</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <img src="../static/school.jpg" width="150" height="30">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="navbar-brand" href="#">你好</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link " href="/">首页<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link " href="query">导航</a>
+                <a class="nav-item nav-link" href="map">查看分布图</a>
+                <a class="nav-item nav-link  active " href="introduction">诊室简介</a>
+            </div>
+        </div>
+    </nav>
+<div class="content">
+    <h3 align="center" style="margin-top: 30px;">诊室介绍</h3>
+    <div style="margin-top: 40px;">
+    <button type="button" class="btn btn-primary" >非手术科室</button>
+
+<!-- Indicates a successful or positive action -->
+      <button type="button" class="btn btn-success"  href="shoushu">手术科室</button>
+
+<!-- Contextual button for informational alert messages -->
+<button type="button" class="btn btn-info" style="margin-right: 50px;"  href="zhenduan">诊断相关科室</button>
+       出诊信息查询&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="疾病名称">
+        <input type="text" placeholder="科室名称">
+        <input type="text" placeholder="医师名称">
+
+      <button type="button" class="btn btn-success">查询</button>
+        </div>
+    <h5 style="margin-top: 30px;" name="feishoushu">非手术科室</h5>
+    <div class="row">
+
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">内科学系</button>
+
+  </div>
+  <div class="col-md-2">
+   <button type="button" class="btn btn-default">心内科</button>
+
+  </div>
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">呼吸内科</button>
+
+  </div>
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">消化内科</button>
+
+  </div>
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">肾内科</button>
+
+  </div>
+  <div class="col-md-2">
+      <button type="button" class="btn btn-default">血液内科</button>
+
+  </div>
+
+</div>
+    <div class="row" style="margin-top: 20px;">
+
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">风湿免疫科</button>
+
+  </div>
+  <div class="col-md-2">
+   <button type="button" class="btn btn-default">感染内科</button>
+
+  </div>
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">普通内科</button>
+
+  </div>
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">肿瘤内科</button>
+
+  </div>
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">MICU</button>
+
+  </div>
+  <div class="col-md-2">
+      <button type="button" class="btn btn-default">老年医学科</button>
+
+  </div>
+
+    </div>
+     <div class="row" style="margin-top: 20px;">
+
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">内分泌科</button>
+
+  </div>
+  <div class="col-md-2">
+   <button type="button" class="btn btn-default">儿科</button>
+
+  </div>
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">神经科</button>
+
+  </div>
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">心理医学科</button>
+
+  </div>
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">皮肤科</button>
+
+  </div>
+  <div class="col-md-2">
+      <button type="button" class="btn btn-default">临床营养科</button>
+
+  </div>
+
+    </div>
+    <h5  style="margin-top: 30px;" name="shoushu">手术科室</h5>
+    <div class="row">
+
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">外科学系</button>
+
+  </div>
+  <div class="col-md-2">
+   <button type="button" class="btn btn-default">基本外科</button>
+
+  </div>
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">骨科</button>
+
+  </div>
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">心外科</button>
+
+  </div>
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">胸外科</button>
+
+  </div>
+  <div class="col-md-2">
+      <button type="button" class="btn btn-default">泌尿外科</button>
+
+  </div>
+
+</div>
+    <div class="row" style="margin-top: 20px;">
+
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">神经外科</button>
+
+  </div>
+  <div class="col-md-2">
+   <button type="button" class="btn btn-default">血管外科</button>
+
+  </div>
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">整形美容科</button>
+
+  </div>
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">乳腺外科</button>
+
+  </div>
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">肝脏外科</button>
+
+  </div>
+  <div class="col-md-2">
+      <button type="button" class="btn btn-default">麻醉科</button>
+
+  </div>
+
+    </div>
+     <div class="row" style="margin-top: 20px;">
+
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">妇产科</button>
+
+  </div>
+  <div class="col-md-2">
+   <button type="button" class="btn btn-default">眼科</button>
+
+  </div>
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">耳鼻喉科</button>
+
+  </div>
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">口腔科</button>
+
+  </div>
+  <div class="col-md-2">
+
+  </div>
+  <div class="col-md-2">
+
+
+  </div>
+
+    </div>
+    <h5  style="margin-top: 30px;" name="zhenduan">诊断相关诊室</h5>
+    <div class="row">
+
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">超生医学科</button>
+
+  </div>
+  <div class="col-md-2">
+   <button type="button" class="btn btn-default">病理科</button>
+
+  </div>
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">检验科</button>
+
+  </div>
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">放射科</button>
+
+  </div>
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">放射治疗科</button>
+
+  </div>
+  <div class="col-md-2">
+      <button type="button" class="btn btn-default">核医学科</button>
+
+  </div>
+
+</div>
+    <div class="row" style="margin-top: 20px;">
+
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">输血科</button>
+
+  </div>
+  <div class="col-md-2">
+   <button type="button" class="btn btn-default">药剂科</button>
+
+  </div>
+  <div class="col-md-2">
+<button type="button" class="btn btn-default">病案科</button>
+
+  </div>
+  <div class="col-md-2">
+
+  </div>
+  <div class="col-md-2">
+
+
+  </div>
+  <div class="col-md-2">
+
+
+  </div>
+
+    </div>
+
+
+</div>
+
+ <div class="footer">
+        <div class="head">
+            友情链接：
+        <a href="http://www.nhc.gov.cn/">中华人民共和国国家卫生健康委员会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+
+            <a href="http://wsjsw.qingdao.gov.cn/n28356065/index.html">青岛市卫生健康委员会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+             <a href="http://www.cams.ac.cn/">中国医学科学院&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+             <a href="http://upc.edu.cn/">中国石油大学（华东）官方网站&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <hr style="background: #9F9F9F">
+        <div class="bottom">
+            <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+      关于我们
+      <br>
+            地址：山东省青岛市黄岛区长江西路66号中国石油大学（华东）,266000
+            <br>
+            服务热线：0532-12345678
+  </div>
+  <div class="col-xs-6 col-md-4">
+      Copyright 2019 中国石油大学（华东）校医院 All Rights Reserved.
+      <br>
+      鲁ICP 备 0000000号-1 文保网安备案号：000000000 京卫网审字【2019】第0号
+      <br>
+      网站建设：智能机器人系统友情提供
+  </div>
+</div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>

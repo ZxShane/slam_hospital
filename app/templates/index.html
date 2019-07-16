@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>recorder.js</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+{#    <link rel="stylesheet" href="../static/layui/css/layui.css"  media="all">#}
+    <style>
+        *{
+    margin:0;
+    padding:0;
+}
+.wrap{
+    width:1400px;
+    height: 500px;
+    overflow: auto;
+    position: relative;
+    left: 20px;
+
+}
+.wraps{
+    width:1400px;
+    height: 500px;
+
+}
+.wraps img{
+    float: left;
+    cursor: pointer;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.page{
+    position: absolute;
+    bottom:10px;
+    right:10px;
+}
+.page span{
+    float: left;
+    width:20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    margin-left:10px;
+    cursor: pointer;
+}
+.page span.current{
+    background: rgba(0, 0, 0, 0.8);
+}
+.btnBox span{
+    width:30px;
+    height: 30px;
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    line-height: 26px;
+    cursor: pointer;
+    position: absolute;
+    top:50%;
+    margin-top:-10px;
+    z-index: 3;
+}
+
+#left{
+    left:0;
+}
+#right{
+    right:0;
+}
+.head{
+    text-decoration: none;
+    margin-left: 40px;
+    margin-top: 40px;
+
+}
+a{
+    text-decoration: none;
+}
+.footer{
+    margin-top: 40px;
+    background: #4E5465;
+    text-decoration: none;
+    color: #DCDCDC;
+    font-size: 12px;
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+.bottom{
+    margin-left: 40px;
+}
+.message {
+    box-shadow: 10px 10px 5px #9F9F9F;
+{#border: solid;#} margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align:center">医院导诊系统</h1>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+         <img src="../static/school.jpg" width="150" height="30">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="navbar-brand" href="#">你好</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/">首页<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link " href="query">导航</a>
+                <a class="nav-item nav-link" href="map">查看分布图</a>
+                <a class="nav-item nav-link disabled" href="introduction">诊室简介</a>
+            </div>
+        </div>
+    </nav>
+<div class="wrap">
+        <div class="btnBox">
+            <span id="left">&lt;</span>
+            <span id="right">&gt;</span>
+        </div>
+        <div class="wraps">
+            <img src="../static/timg.jpeg" width="1400" height="500" />
+            <img src="../static/car.jpg"  width="1400" height="500"/>
+            <img src="../static/building.jpg" width="1400" height="500" />
+        </div>
+        <p class="page"></p>
+    </div>
+<div class="row">
+  <div class="col-xs-6 col-md-4">
+      <div class="message">
+           <img src="../static/IMG_0458.JPG" width="430" height="200"/>
+        <h5>通知公告</h5>
+          <ul>关于发布我院"最美医生"评选活动</ul>
+          <hr>
+          <ul>关于选拔第二十三届公派交流通知</ul>
+          <hr>
+          <ul>中国石油大学（华东）校医院门诊调整通知</ul>
+
+      </div>
+  </div>
+  <div class="col-xs-6 col-md-4">
+      <div class="message">
+        <img src="../static/IMG_0459.JPG" width="430" height="200"/>
+        <h5>重大新闻</h5>
+          <ul>热烈庆祝我院使用视觉导航机器人</ul>
+          <hr>
+          <ul>中国石油大学（华东）计算机科学与技术学院与我院达成合作</ul>
+          <hr>
+          <ul>医改与改善医疗服务同步，我们在行动</ul>
+      </div>
+  </div>
+  <div class="col-xs-6 col-md-4">
+      <div class="message">
+    <img src="../static/IMG_0452.JPG" width="430" height="200"/>
+        <h5>石大医生说</h5>
+          <ul>管住嘴迈开腿，为什么还是瘦不下来</ul>
+          <hr>
+          <ul>甲型H1N1再一次席卷山东，我们应该如何预防</ul>
+          <hr>
+          <ul>这些习惯，为了家人，也必须要戒掉！</ul>
+      </div>
+      </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="head">
+            友情链接：
+        <a href="http://www.nhc.gov.cn/">中华人民共和国国家卫生健康委员会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+
+            <a href="http://wsjsw.qingdao.gov.cn/n28356065/index.html">青岛市卫生健康委员会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+             <a href="http://www.cams.ac.cn/">中国医学科学院&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+             <a href="http://upc.edu.cn/">中国石油大学（华东）官方网站&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <hr style="background: #9F9F9F">
+        <div class="bottom">
+            <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+      关于我们
+      <br>
+            地址：山东省青岛市黄岛区长江西路66号中国石油大学（华东）,266000
+            <br>
+            服务热线：0532-12345678
+  </div>
+  <div class="col-xs-6 col-md-4">
+      Copyright 2019 中国石油大学（华东）校医院 All Rights Reserved.
+      <br>
+      鲁ICP 备 0000000号-1 文保网安备案号：000000000 京卫网审字【2019】第0号
+      <br>
+      网站建设：智能机器人系统友情提供
+  </div>
+</div>
+
+
+        </div>
+    </div>
+ <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script>
+    $(function(){
+    $(".wraps img:not(:first)").hide();
+    var index = 0;
+    var s = $(".wraps img").length;
+    var auto;
+    for(var i=1; i<=s; i++){
+        $(".page").append("<span>" + i + "</span>");
+    }
+    $(".page span:first").addClass("current");
+    $(".page span").on("click", function(){
+        index = $(this).index();
+        move();
+    });
+    function autos(){
+        auto = setInterval(function(){
+            index++;
+            if(index == s){
+                index = 0;
+            }
+            move();
+        }, 2000);
+    }
+    autos();
+    function move(){
+        $(".page span").eq(index).addClass("current").siblings().removeClass('current');
+        $(".wraps img").eq(index).stop(true, true).fadeIn().siblings().stop(true, true).fadeOut();
+    }
+    $("#left").click(function(){
+        clearInterval(auto);
+        index--;
+        if(index <= -1){
+            index = s-1;
+        }
+        move();
+        autos();
+    });
+    $("#right").click(function(){
+        clearInterval(auto);
+        index++;
+        if(index >= s){
+            index = 0;
+        }
+        move();
+        autos();
+    });
+    $(".wraps img, .page span").mouseover(function(){
+        clearInterval(auto);
+    }).mouseout(function(){
+        autos();
+    });
+});
+</script>
+</body>
+
+</html>
